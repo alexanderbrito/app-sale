@@ -10,10 +10,10 @@ const About = () => {
   }, [location]);
   return (
     <div className="max-w-container mx-auto px-4">
-      <Breadcrumbs title="About" prevLocation={prevLocation} />
+      <Breadcrumbs title="Sobre" prevLocation={prevLocation} />
       <div className="pb-10">
         <h1 className="max-w-[600px] text-base text-lightText mb-2">
-          <span className="text-primeColor font-semibold text-lg">Orebi</span>{" "}
+          <span className="text-primeColor font-semibold text-lg">ALX SHOP</span>{" "}
           É uma das principais marcas de comércio eletrônico do mundo e é internacionalmente
 reconhecido por celebrar a essência do clássico cool mundial
 estilo de aparência.

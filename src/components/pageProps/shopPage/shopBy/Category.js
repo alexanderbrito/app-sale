@@ -13,7 +13,7 @@ const Category = () => {
     },
     {
       _id: 991,
-      title: "Dispositivos",
+      title: "Canecas",
     },
     {
       _id: 992,
@@ -22,7 +22,7 @@ const Category = () => {
     },
     {
       _id: 993,
-      title: "Eletrônicos",
+      title: "Camisetas",
     },
     {
       _id: 994,

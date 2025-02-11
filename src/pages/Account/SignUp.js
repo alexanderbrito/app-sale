@@ -72,36 +72,36 @@ const SignUp = () => {
     e.preventDefault();
     if (checked) {
       if (!clientName) {
-        setErrClientName("Enter your name");
+        setErrClientName("Entre com seu nome");
       }
       if (!email) {
-        setErrEmail("Enter your email");
+        setErrEmail("Digite seu email");
       } else {
         if (!EmailValidation(email)) {
-          setErrEmail("Enter a Valid email");
+          setErrEmail("Insira um e-mail válido");
         }
       }
       if (!phone) {
-        setErrPhone("Enter your phone number");
+        setErrPhone("Digite seu número de telefone");
       }
       if (!password) {
-        setErrPassword("Create a password");
+        setErrPassword("Criar senha");
       } else {
         if (password.length < 6) {
-          setErrPassword("Passwords must be at least 6 characters");
+          setErrPassword("As senhas devem ter pelo menos 6 caracteres");
         }
       }
       if (!address) {
-        setErrAddress("Enter your address");
+        setErrAddress("Digite seu endereço");
       }
       if (!city) {
-        setErrCity("Enter your city name");
+        setErrCity("Digite o nome da sua cidade");
       }
       if (!country) {
-        setErrCountry("Enter the country you are residing");
+        setErrCountry("Digite o país em que você reside");
       }
       if (!zip) {
-        setErrZip("Enter the zip code of your area");
+        setErrZip("Digite o CEP da sua área");
       }
       // ============== Getting the value ==============
       if (
@@ -116,7 +116,7 @@ const SignUp = () => {
         zip
       ) {
         setSuccessMsg(
-          `Hello dear ${clientName}, Welcome you to OREBI Admin panel. We received your Sign up request. We are processing to validate your access. Till then stay connected and additional assistance will be sent to you by your mail at ${email}`
+          `Olá ${clientName}, Bem-vindo ao painel de administração da ALX SHOP. Recebemos sua solicitação de inscrição. Estamos processando para validar seu acesso. Até lá, fique conectado e assistência adicional será enviada a você pelo seu e-mail em ${email}`
         );
         setClientName("");
         setEmail("");
@@ -138,7 +138,7 @@ const SignUp = () => {
           </Link>
           <div className="flex flex-col gap-1 -mt-1">
             <h1 className="font-titleFont text-xl font-medium">
-              Get started for free
+             Comece gratuitamente
             </h1>
             <p className="text-base">Crie sua conta para acessar mais.
             </p>
@@ -236,14 +236,14 @@ const SignUp = () => {
                 {/* Email */}
                 <div className="flex flex-col gap-.5">
                   <p className="font-titleFont text-base font-semibold text-gray-600">
-                  E-mail de trabalho
+                  E-mail
                   </p>
                   <input
                     onChange={handleEmail}
                     value={email}
                     className="w-full h-8 placeholder:text-sm placeholder:tracking-wide px-4 text-base font-medium placeholder:font-normal rounded-md border-[1px] border-gray-400 outline-none"
                     type="email"
-                    placeholder="john@workemail.com"
+                    placeholder="alexandercesar.brito@gmail.com"
                   />
                   {errEmail && (
                     <p className="text-sm text-red-500 font-titleFont font-semibold px-4">
@@ -281,7 +281,7 @@ const SignUp = () => {
                     value={password}
                     className="w-full h-8 placeholder:text-sm placeholder:tracking-wide px-4 text-base font-medium placeholder:font-normal rounded-md border-[1px] border-gray-400 outline-none"
                     type="password"
-                    placeholder="Create password"
+                    placeholder="Criar senha"
                   />
                   {errPassword && (
                     <p className="text-sm text-red-500 font-titleFont font-semibold px-4">

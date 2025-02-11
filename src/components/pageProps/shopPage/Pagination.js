@@ -18,7 +18,7 @@ function Items({ currentItems }) {
                 img={product.image_url}
                 productName={product.name}
                 price={product.price_in_cents}
-                //color={product.description}
+                color={product.description}
                 badge={true}
               />
             }
