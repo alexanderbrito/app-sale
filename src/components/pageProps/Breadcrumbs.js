@@ -17,12 +17,6 @@ const Breadcrumbs = ({ prevLocation, title }) => {
       <p className="text-sm font-normal text-lightText capitalize flex items-center">
         <span> {prevLocation === "" ? "Início" : prevLocation}</span>
 
-        <span className="px-1">
-          <HiOutlineChevronRight />
-        </span>
-        <span className="capitalize font-semibold text-primeColor">
-          {locationPath}
-        </span>
       </p>
     </div>
   );
