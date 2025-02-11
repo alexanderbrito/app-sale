@@ -21,7 +21,7 @@ const Sale = () => {
       {
         query: `
            {
-            allProducts {
+            allProducts{
               id
               name
               description
@@ -48,22 +48,25 @@ const Sale = () => {
   }, [])
 
   return (
-    <div className="py-20 flex flex-col md:flex-row items-center justify-between gap-4 lg:gap-10">
-      <div className="w-full md:w-2/3 lg:w-1/2 h-full">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="col-span-2 md:col-span-2">
         <Link to="/shop">
-          <Image className="h-full w-full object-cover" imgSrc={allProducts[0]?.image_url} />
+          <Image className="h-full" imgSrc={allProducts[0]?.image_url} />
         </Link>
       </div>
-      <div className="w-full md:w-2/3 lg:w-1/2 h-auto flex flex-col gap-4 lg:gap-10">
-        <div className="h-1/2 w-full">
-          <Link to="/shop">
-            <Image className="h-full w-full object-cover" imgSrc={allProducts[1]?.image_url} />
-          </Link>
-        </div>
-        <div className="h-1/2 w-full">
+      <div className="col-span-1 md:col-span-1 flex flex-col gap-4">
+        <div className="h-full">
           <Link to="/shop">
             <Image
-              className="h-full w-full object-cover"
+              className="h-full"
+              imgSrc={allProducts[1]?.image_url}
+            />
+          </Link>
+        </div>
+        <div className="h-full">
+          <Link to="/shop">
+            <Image
+              className="h-full"
               imgSrc={allProducts[3]?.image_url}
             />
           </Link>
