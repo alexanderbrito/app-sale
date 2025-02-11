@@ -7,11 +7,15 @@ import { resetCart } from "../../redux/orebiSlice";
 import { emptyCart } from "../../assets/images/index";
 import ItemCard from "./ItemCard";
 
+import ReactLoading from 'react-loading';
+
 const Cart = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.orebiReducer.products);
   const [totalAmt, setTotalAmt] = useState("");
   const [shippingCharge, setShippingCharge] = useState("");
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     let price = 0;
     products.map((item) => {
@@ -29,8 +33,19 @@ const Cart = () => {
       setShippingCharge(20);
     }
   }, [totalAmt]);
+
+  const startPayment = () => {
+    setLoading(true)
+    setTimeout(() => {
+      window.location.href = "/paymentgateway";
+    }, 4000)
+
+  };
+
   return (
     <div className="max-w-container mx-auto px-4">
+
+     
       <Breadcrumbs title="Cart" />
       {products.length > 0 ? (
         <div className="pb-20">
@@ -63,11 +78,16 @@ const Cart = () => {
                 placeholder="Coupon Number"
               />
               <p className="text-sm mdl:text-base font-semibold">
-              Aplicar cupom
+                Aplicar cupom
               </p>
             </div>
-            <p className="text-lg font-semibold">Update Cart</p>
+            <p className="text-lg font-semibold">Atualizar</p>
           </div>
+
+          <div className="flex items-center justify-center">
+            {loading && <ReactLoading type={"bubbles"} color={"black"} height={50} width={100} />}
+          </div>
+
           <div className="max-w-7xl gap-4 flex justify-end mt-4">
             <div className="w-96 flex flex-col gap-4">
               <h1 className="text-2xl font-semibold text-right">Cart totals</h1>
@@ -79,7 +99,7 @@ const Cart = () => {
                   </span>
                 </p>
                 <p className="flex items-center justify-between border-[1px] border-gray-400 border-b-0 py-1.5 text-lg px-4 font-medium">
-                Taxa de envio
+                  Taxa de envio
                   <span className="font-semibold tracking-wide font-titleFont">
                     ${shippingCharge}
                   </span>
@@ -92,11 +112,9 @@ const Cart = () => {
                 </p>
               </div>
               <div className="flex justify-end">
-                <Link to="/paymentgateway">
-                  <button className="w-52 h-10 bg-primeColor text-white hover:bg-black duration-300">
-                  Prossiga para o Checkout
-                  </button>
-                </Link>
+                <button disabled={loading} onClick={startPayment} className="w-52 h-10 bg-primeColor text-white hover:bg-black duration-300">
+                 Finalizar compra
+                </button>
               </div>
             </div>
           </div>
@@ -117,11 +135,11 @@ const Cart = () => {
           </div>
           <div className="max-w-[500px] p-4 py-8 bg-white flex gap-4 flex-col items-center rounded-md shadow-lg">
             <h1 className="font-titleFont text-xl font-bold uppercase">
-            Seu carrinho se sente solitário.
+              Seu carrinho se sente solitário.
             </h1>
             <p className="text-sm text-center px-10 -mt-2">
-            Seu carrinho de compras vive para servir. Dê-lhe propósito - preencha-o com
-            livros, eletrônicos, vídeos, etc. e torná-lo feliz.
+              Seu carrinho de compras vive para servir. Dê-lhe propósito - preencha-o com
+              livros, eletrônicos, vídeos, etc. e torná-lo feliz.
             </p>
             <Link to="/shop">
               <button className="bg-primeColor rounded-md cursor-pointer hover:bg-black active:bg-gray-900 px-8 py-2 font-titleFont font-semibold text-lg text-gray-200 hover:text-white duration-300">
