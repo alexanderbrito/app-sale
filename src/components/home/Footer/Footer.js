@@ -36,18 +36,9 @@ const Footer = () => {
             <p className="text-base w-full xl:w-[80%]">
             Nossa loja é sofisticada e acolhedora, oferecendo produtos exclusivos para moda, decoração e presentes. Com alta qualidade e atendimento personalizado, garantimos uma experiência única para quem busca estilo e autenticidade. 
             </p>
-            <ul className="flex items-center gap-2">
+            <ul className="flex items-center gap-2">               
               <a
-                href="https://www.youtube.com/@reactjsBD"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <li className="w-7 h-7 bg-primeColor text-gray-100 hover:text-white cursor-pointer text-lg rounded-full flex justify-center items-center hover:bg-black duration-300">
-                  <FaYoutube />
-                </li>
-              </a>
-              <a
-                href="https://github.com/noorjsdivs"
+                href="https://github.com/alexanderbrito"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -56,16 +47,7 @@ const Footer = () => {
                 </li>
               </a>
               <a
-                href="https://www.facebook.com/Noorlalu143/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <li className="w-7 h-7 bg-primeColor text-gray-100 hover:text-white cursor-pointer text-lg rounded-full flex justify-center items-center hover:bg-black duration-300">
-                  <FaFacebook />
-                </li>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/noor-mohammad-ab2245193/"
+                href="https://www.linkedin.com/in/alexanderrom%C3%A3o/"
                 target="_blank"
                 rel="noreferrer"
               >
